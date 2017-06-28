@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         initialize();
 
-        itemClick();
+        itemClick(); // add click event
     }
 
     void initialize() {
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         mRcvResultList.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    void getNetwork(String imageName) {
+    void networkCommunication(String imageName) {
 
         RestAPI restAPI = RestApiBuilder.buildRetrofitService();
 
@@ -68,14 +68,23 @@ public class MainActivity extends AppCompatActivity {
                         String imageUrl = data.getList().getItems().get(itemIndex).getThumbnail();
                         String title = data.getList().getItems().get(itemIndex).getTitle();
                         String link = data.getList().getItems().get(itemIndex).getLink();
-                        mResultRecyclerViewAdapter.addData(new SearchResultRcvItem(itemIndex, imageUrl, title, link));
 
+                        addListItem(itemIndex, imageUrl, title, link);
                     }
                 }, (error) -> {
                     Log.e(TAG, "error : " + error);
                 });
     }
 
+
+    void addListItem(int index, String imageUrl, String title, String link) {
+        mResultRecyclerViewAdapter.addData(new SearchResultRcvItem(index, imageUrl, title, link));
+    }
+
+
+    /**
+     * recyclerview item click event
+     */
     void itemClick() {
         mRcvResultList.addOnItemTouchListener(new RecyclerViewOnItemClickListener(this, mRcvResultList, new RecyclerViewOnItemClickListener.OnItemClickListener() {
             @Override
@@ -92,8 +101,14 @@ public class MainActivity extends AppCompatActivity {
         }));
     }
 
+    /**
+     * button click event
+     * this application has just one button.
+     *
+     * @param v
+     */
     public void onClick(View v) {
         mResultRecyclerViewAdapter.clear();
-        getNetwork(edtSearchImageName.getText().toString());
+        networkCommunication(edtSearchImageName.getText().toString());
     }
 }
