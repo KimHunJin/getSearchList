@@ -1,8 +1,6 @@
 package kr.co.tmon.hunjin.myapplication.network;
 
-import android.content.res.Resources;
-
-import kr.co.tmon.hunjin.myapplication.R;
+import kr.co.tmon.hunjin.myapplication.utils.StaticURL;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -13,7 +11,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class RestApiBuilder {
+
     public static RestAPI buildRetrofitService() {
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(StaticURL.URL)
                 // Data converter

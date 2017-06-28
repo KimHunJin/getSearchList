@@ -2,6 +2,8 @@ package kr.co.tmon.hunjin.myapplication.network.objects;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 /**
  * Created by ysg01129 on 2017-06-28.
  */
@@ -23,7 +25,11 @@ public class JsonObjectChannel {
     String description;
 
     @SerializedName("item")
-    JsonObjectItem[] items;
+    List<JsonObjectItem> items;
+
+    public List<JsonObjectItem> getItems() {
+        return items;
+    }
 
     public String getResult() {
         return result;
@@ -45,7 +51,5 @@ public class JsonObjectChannel {
         return description;
     }
 
-    public JsonObjectItem[] getItems() {
-        return items;
-    }
+
 }

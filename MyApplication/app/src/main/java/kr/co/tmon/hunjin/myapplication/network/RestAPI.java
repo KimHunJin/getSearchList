@@ -1,11 +1,9 @@
 package kr.co.tmon.hunjin.myapplication.network;
 
 
-import java.util.Map;
-
 import kr.co.tmon.hunjin.myapplication.network.objects.JsonObject;
 import retrofit2.http.GET;
-import retrofit2.http.QueryMap;
+import retrofit2.http.Query;
 import rx.Observable;
 
 /**
@@ -14,7 +12,11 @@ import rx.Observable;
 
 public interface RestAPI {
 
-    @GET("/image")
-    Observable<JsonObject> getSearchResultList(@QueryMap Map<String, String> options);
+    @GET("image?")
+    Observable<JsonObject> getSearchResultList(
+            @Query("apikey") String key,
+            @Query("q") String name,
+            @Query("output") String option
+    );
 
 }

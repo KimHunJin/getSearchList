@@ -53,6 +53,10 @@ public class ResultRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
         notifyDataSetChanged();
     }
 
+    public List<SearchResultRcvItem> getItems() {
+        return items;
+    }
+
     public void clear() {
         items.clear();
         notifyDataSetChanged();

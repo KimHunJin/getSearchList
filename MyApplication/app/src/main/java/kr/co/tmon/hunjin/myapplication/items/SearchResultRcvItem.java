@@ -8,11 +8,13 @@ public class SearchResultRcvItem {
     private int mId;
     private String mImageURL;
     private String mTitle;
+    private String mLink;
 
-    public SearchResultRcvItem(int id, String imageURL, String title) {
+    public SearchResultRcvItem(int id, String imageURL, String title, String link) {
         this.mId = id;
         this.mImageURL = imageURL;
         this.mTitle = title;
+        this.mLink = link;
     }
 
     public int getmId() {
@@ -25,5 +27,9 @@ public class SearchResultRcvItem {
 
     public String getmTitle() {
         return mTitle;
+    }
+
+    public String getmLink() {
+        return mLink;
     }
 }
