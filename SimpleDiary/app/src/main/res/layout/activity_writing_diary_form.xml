@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="verical"
+    tools:context="kr.co.tmon.hunjin.simpledairy.WritingDiaryFormActivity">
+
+    <EditText
+        android:id="@+id/edt_diary_writing_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/retangle_box"
+        android:hint="title"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/title_margin" />
+
+    <EditText
+        android:id="@+id/edt_diary_writing_contents"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/edt_diary_writing_title"
+        android:background="@drawable/rounded_box"
+        android:gravity="top"
+        android:hint="contents"
+        android:padding="@dimen/title_margin" />
+
+</RelativeLayout>
