@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="verical"
-    tools:context="kr.co.tmon.hunjin.simpledairy.WritingDiaryFormActivity">
+    tools:context="kr.co.tmon.hunjin.simpledairy.diary.WritingDiaryFormActivity">
 
     <EditText
         android:id="@+id/edt_diary_writing_title"
